@@ -1,0 +1,188 @@
+<% layout("/layouts/boilerplate")%>
+
+<!-- <div class="filters mb-2">
+  <div class="filter">
+    <a
+      href="/listings?category=Trending"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-solid fa-fire"></i></div>
+      <p>Trending</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a
+      href="/listings?category=Vintage"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Vintage</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a
+      href="/listings?category=Amazing Pools"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a
+      href="/listings?category=Mountains"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-solid fa-mountain-sun"></i></div>
+      <p>Mountains</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a
+      href="/listings?category=Camping"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-solid fa-tents"></i></div>
+      <p>Camping</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a
+      href="/listings?category=Farms"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-solid fa-leaf"></i></div>
+      <p>Farms</p>
+    </a>
+  </div>
+
+  <div class="filter">
+    <a
+      href="/listings?category=Arctic"
+      style="text-decoration: none; color: inherit"
+    >
+      <div><i class="fa-solid fa-snowman"></i></div>
+      <p>Arctic</p>
+    </a>
+  </div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg bg-body-light mb-2">
+  <div class="container-fluid">
+    <!-- Toggle button for mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#filtersNavbar"
+      aria-controls="filtersNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div
+      class="collapse navbar-collapse p-2 rounded filter-navbar-collapse"
+      id="filtersNavbar"
+    >
+      <div
+        class="filters mx-auto d-flex flex-wrap justify-content-center gap-3"
+      >
+        <div class="filter">
+          <a
+            href="/listings?category=Trending"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+          </a>
+        </div>
+        <div class="filter">
+          <a
+            href="/listings?category=Vintage"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Vintage</p>
+          </a>
+        </div>
+        <div class="filter">
+          <a
+            href="/listings?category=Amazing Pools"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+          </a>
+        </div>
+        <div class="filter">
+          <a
+            href="/listings?category=Mountains"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-solid fa-mountain-sun"></i></div>
+            <p>Mountains</p>
+          </a>
+        </div>
+        <div class="filter">
+          <a
+            href="/listings?category=Camping"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-solid fa-tents"></i></div>
+            <p>Camping</p>
+          </a>
+        </div>
+        <div class="filter">
+          <a
+            href="/listings?category=Farms"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-solid fa-leaf"></i></div>
+            <p>Farms</p>
+          </a>
+        </div>
+        <div class="filter">
+          <a
+            href="/listings?category=Arctic"
+            style="text-decoration: none; color: inherit"
+          >
+            <div><i class="fa-solid fa-snowman"></i></div>
+            <p>Arctic</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="all-listings">
+  <%for(let listing of allListings) {%>
+  <a href="/listings/<%=listing._id%>" class="listing-link">
+    <div class="card index-card" style="width: 18rem">
+      <div class="image-hover-container">
+        <img
+          src="<%=listing.image.url%>"
+          class="card-img-top index-img"
+          alt="listing-image"
+        />
+        <div class="image-overlay"></div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <b><%=listing.title%></b>
+          <br />
+          &#8377;<%=listing.price.toLocaleString("en-IN")%> for 1 night
+        </p>
+      </div>
+    </div>
+  </a>
+  <%}%>
+</div>

@@ -1,0 +1,223 @@
+body {
+  padding: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/* Navbar */
+.fa-igloo {
+  color: #fe424d;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.navbar {
+  height: 4rem;
+  background-color: white;
+}
+.nav-link {
+  color: black;
+}
+
+.navbar-collapse {
+  background-color: white;
+}
+
+/*footer*/
+.footer {
+  text-align: center;
+  height: 6rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+.f-socials,
+.f-brand,
+.f-links {
+  width: 100%;
+}
+
+.f-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.f-socials i:hover {
+  font-size: 2rem;
+}
+
+.f-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.f-links a:hover {
+  text-decoration: underline;
+  color: rgb(32, 52, 176);
+}
+
+/* listings index */
+.filters {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.filter {
+  text-align: center;
+  opacity: 0.7;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+}
+
+.filter-navbar-collapse {
+  background-color: #ffffff !important;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 1050; /* above other elements */
+}
+
+.filter.active {
+  opacity: 1;
+  color: #ff4d4f; /* highlight color */
+  font-weight: 600;
+  border-bottom: 2px solid #ff4d4f;
+}
+
+.index-title {
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem;
+}
+.all-listings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-around;
+}
+.tick-mark {
+  height: 1.5rem;
+  width: 1rem;
+}
+
+.index-card {
+  height: 18rem;
+  border: none;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.index-img {
+  height: 12.5rem !important; /* Fixed height */
+  width: 100%; /* Full width of card */
+  object-fit: cover; /* Crops the image to fill */
+  display: block;
+  border-radius: 1rem;
+}
+
+/* .card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.3;
+  background-color: beige;
+} */
+
+.image-hover-container {
+  position: relative; /* Needed for absolute positioning of the overlay */
+  display: inline-block; /* To make the container wrap tightly around the image */
+  overflow: hidden; /* Ensures the overlay doesn't spill out if it grows */
+  cursor: pointer; /* Indicates it's interactive */
+}
+
+.image-hover-container img {
+  display: block; /* Removes extra space below the image */
+  width: 100%; /* Make image fill its container */
+  height: auto; /* Maintain aspect ratio */
+  transition: filter 0.3s ease-in-out; /* Smooth transition for potential image effects */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Start fully transparent white */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for the color */
+  pointer-events: none; /* Allows clicks to pass through to the image/container */
+}
+
+/* Hover effect */
+.image-hover-container:hover .image-overlay {
+  background-color: rgba(255, 255, 255, 0.3); /* Light white overlay on hover */
+}
+
+/* Optional: Add a slight scale or brightness change to the image itself */
+.image-hover-container:hover img {
+  filter: brightness(0.9); /* Slightly darken the image under the overlay */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* New-Listing  */
+.add-btn {
+  border: none;
+  background-color: #fe424d;
+}
+
+/* Show-listing */
+.show-img {
+  height: 40vh !important;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.show-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.show-card {
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Review Styling */
+.fa-star {
+  color: gold;
+}
+
+/* Edit listing */
+.edit-img {
+  height: 12rem;
+  border-radius: 1rem;
+}
+
+/* Map */
+#map {
+  height: 350px;
+  width: 70vh;
+  border-radius: 1rem;
+}
